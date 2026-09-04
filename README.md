@@ -18,3 +18,14 @@ npm install
 ```
 
 Create a `.env.local` file in the root with your CMS credentials:
+
+CMS_API_TOKEN=your_token_here
+CMS_PROJECT_ID=your_project_id_here
+
+Start the dev server:
+
+```bash
+npm run dev
+```
+
+Then open http://localhost:3000
