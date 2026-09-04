@@ -6,7 +6,8 @@ This project is a full redesign and technical relaunch of jmasrarquitectos.com, 
 
 - Next.js
 - Tailwind CSS
-- Headless CMS (TBD)
+- Payload CMS
+- MongoDB (Atlas)
 - Deployed on Vercel
 
 ## How to Run It Locally
@@ -19,8 +20,8 @@ npm install
 
 Create a `.env.local` file in the root with your CMS credentials:
 
-CMS_API_TOKEN=your_token_here
-CMS_PROJECT_ID=your_project_id_here
+DATABASE_URL=your_mongodb_connection_string_here
+PAYLOAD_SECRET=your_payload_secret_here
 
 Start the dev server:
 
@@ -28,7 +29,7 @@ Start the dev server:
 npm run dev
 ```
 
-Then open http://localhost:3000
+Then open http://localhost:3000, or http://localhost:3000/admin to log in to the CMS.
 
 ## Design Process
 
