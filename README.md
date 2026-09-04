@@ -29,3 +29,7 @@ npm run dev
 ```
 
 Then open http://localhost:3000
+
+## Design Process
+
+![Homepage sketch](docs/design/sketches/Homepage-sketch.jpg)
