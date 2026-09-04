@@ -33,4 +33,4 @@ Then open http://localhost:3000, or http://localhost:3000/admin to log in to the
 
 ## Design Process
 
-![Homepage sketch](docs/design/sketches/Homepage-sketch.jpg)
+![Homepage sketch](docs/design/sketches/01-homepage-sketch.jpg)
