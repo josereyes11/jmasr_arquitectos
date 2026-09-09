@@ -13,9 +13,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
-      <body>
+      <body className="flex min-h-screen flex-col">
         <Header />
-        <main>{children}</main>
+        <main className="flex flex-1 flex-col items-center justify-center">{children}</main>
         <Footer />
       </body>
     </html>
