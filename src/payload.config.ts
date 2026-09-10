@@ -32,8 +32,6 @@ export default buildConfig({
     url: process.env.DATABASE_URL || '',
   }),
   sharp,
-  plugins: [],
-
   plugins: [
     vercelBlobStorage({
       collections: {
