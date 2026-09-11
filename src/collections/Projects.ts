@@ -61,5 +61,13 @@ export const Projects: CollectionConfig = {
         { label: 'Proyectos especiales', value: 'proyectos-especiales' },
       ],
     },
+    {
+      name: 'featured',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description: 'Mostrar este proyecto en homepage',
+      },
+    },
   ],
 }
