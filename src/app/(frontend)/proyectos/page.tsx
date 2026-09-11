@@ -3,6 +3,8 @@ import { getPayload } from 'payload'
 import config from '@/payload.config'
 import Image from 'next/image'
 
+export const dynamic = 'force-dynamic'
+
 export default async function ProyectosPage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
