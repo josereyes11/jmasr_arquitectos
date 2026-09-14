@@ -1,11 +1,11 @@
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 import { GalleryHeader } from '@/components/home/GalleryHeader'
-import { ProjectsGallery } from '@/components/home/ProjectsGallery'
+import { ProjectsGallery } from '@/components/ProjectsGallery'
 import { WhatsAppBanner } from '@/components/home/WhatsAppBanner'
 import { ServicesSection } from '@/components/home/ServicesSection'
 import { StatsBanner } from '@/components/home/StatsBanner'
-import { ContactSection } from '@/components/home/ContactSection'
+import { ContactSection } from '@/components/ContactSection'
 
 export const dynamic = 'force-dynamic'
 
