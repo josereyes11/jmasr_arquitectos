@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import type { Project } from 'a/payload-types'
+import type { Project } from '@/payload-types'
 
-export function ProjectsGalelry({ projects }: { projects: Project[] }) {
+export function ProjectsGallery({ projects }: { projects: Project[] }) {
   return (
     <section>
       <h2>PROYECTOS</h2>

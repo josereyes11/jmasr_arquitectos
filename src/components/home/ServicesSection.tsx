@@ -7,7 +7,7 @@ export function ServicesSection({ services }: { services: Service[] }) {
       <h2>SERVICIOS</h2>
       <ul>
         {services.map((service) => (
-          <li key={dervice.id}>
+          <li key={service.id}>
             <h3>{service.name}</h3>
             <p>{service.description}</p>
             <Link href={'/servicios'}>Leer más...</Link>

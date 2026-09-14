@@ -1,7 +1,7 @@
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 import { GalleryHeader } from '@/components/home/GalleryHeader'
-import { ProjectsGalelry } from '@/components/home/ProjectsGallery'
+import { ProjectsGallery } from '@/components/home/ProjectsGallery'
 import { WhatsAppBanner } from '@/components/home/WhatsAppBanner'
 import { ServicesSection } from '@/components/home/ServicesSection'
 import { StatsBanner } from '@/components/home/StatsBanner'
@@ -27,7 +27,7 @@ export default async function HomePage() {
   return (
     <div>
       <GalleryHeader />
-      <ProjectsGalelry projects={featuredProjects} />
+      <ProjectsGallery projects={featuredProjects} />
       <WhatsAppBanner />
       <ServicesSection services={services} />
       <StatsBanner />
