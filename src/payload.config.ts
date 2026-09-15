@@ -9,6 +9,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Projects } from './collections/Projects'
 import { Services } from './collections/Services'
+import { Nosotros } from './globals/Nosotros'
 
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 
@@ -23,6 +24,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Projects, Services],
+  globals: [Nosotros],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
