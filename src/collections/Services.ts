@@ -19,18 +19,40 @@ export const Services: CollectionConfig = {
       required: true,
     },
     {
+      // note: icon is now an SVG upload, not text. Existing services need their icon re-uploaded.
       name: 'icon',
-      type: 'text',
+      type: 'upload',
+      relationTo: 'media',
       required: true,
       admin: {
-        description:
-          'Ícono identificador para el frontend (por ejemplo "construcción", "remodelación", "firma de perito")',
+        description: 'Ícono descriptivo',
       },
     },
     {
       name: 'description',
       type: 'textarea',
       required: true,
+    },
+    {
+      // note: optional photos for this service. If it has any, the card auto-shows a "Ver fotos" button/modal.
+      name: 'gallery',
+      type: 'array',
+      labels: {
+        singular: 'Foto',
+        plural: 'Fotos',
+      },
+      fields: [
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        },
+      ],
+      admin: {
+        description:
+          'Opcional. Si agregas fotos aquí, la tarjeta de este servicio mostrará un botón "Ver fotos" que abre un modal con estas imágenes.',
+      },
     },
   ],
 }

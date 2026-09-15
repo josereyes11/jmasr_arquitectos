@@ -215,10 +215,19 @@ export interface Service {
   id: string;
   name: string;
   /**
-   * Ícono identificador para el frontend (por ejemplo "construcción", "remodelación", "firma de perito")
+   * Ícono descriptivo
    */
-  icon: string;
+  icon: string | Media;
   description: string;
+  /**
+   * Opcional. Si agregas fotos aquí, la tarjeta de este servicio mostrará un botón "Ver fotos" que abre un modal con estas imágenes.
+   */
+  gallery?:
+    | {
+        image: string | Media;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -373,6 +382,12 @@ export interface ServicesSelect<T extends boolean = true> {
   name?: T;
   icon?: T;
   description?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
