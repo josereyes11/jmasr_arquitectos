@@ -1,10 +1,24 @@
-export default function ServiciosPage() {
+import { getPayload } from 'payload'
+import config from '@/payload.config'
+import { WhatsAppBanner } from '@/components/home/WhatsAppBanner'
+import { ServicesGrid } from '@/components/services/ServicesGrid'
+
+export const dynamic = 'force-dynamic'
+
+export default async function ServicesPage() {
+  const payloadConfig = await config
+  const payload = await getPayload({ config: payloadConfig })
+
+  const { docs: services } = await payload.find({
+    collection: 'services',
+    depth: 2,
+  })
+
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
-      <h1 className="text-3xl font-semibold">Servicios</h1>
-      <p className="mt-4 max-w-2xl text-neutral-600">
-        Placeholder content. This page will show the studio services.
-      </p>
+    <div>
+      <h1>SERVICIOS</h1>
+      <WhatsAppBanner />
+      <ServicesGrid services={services} />
     </div>
   )
 }
