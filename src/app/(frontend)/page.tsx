@@ -26,7 +26,7 @@ export default async function HomePage() {
 
   return (
     <div>
-      <GalleryHeader />
+      <GalleryHeader projects={featuredProjects} />
       <ProjectsGallery projects={featuredProjects} />
       <WhatsAppBanner />
       <ServicesSection services={services} />
