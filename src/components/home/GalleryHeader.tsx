@@ -7,7 +7,7 @@ export function GalleryHeader({ projects }: { projects: Project[] }) {
   const media = hero?.images?.[0]?.image
 
   return (
-    <section className="relative flex h-[70vh] min-h-[420px] items-end overflow-hidden">
+    <section className="relative w-full flex h-[80vh] min-h-[420px] items-end overflow-hidden">
       {typeof media === 'object' && media?.url && (
         <Image src={media.url} alt={media.alt} fill priority className="object-over" />
       )}

@@ -1,8 +1,11 @@
 import { getPayload } from 'payload'
 import config from '@/payload.config'
-import { GallerySlider } from '@/components/projects/GallerySlider'
+import { ProjectsHeader } from '@/components/projects/ProjectsHeader'
 import { ProjectsGallery } from '@/components/ProjectsGallery'
 import { ContactSection } from '@/components/ContactSection'
+import { WhatsAppBanner } from '@/components/home/WhatsAppBanner'
+import { StatsBanner } from '@/components/home/StatsBanner'
+import type { Media } from '@/payload-types'
 
 export const dynamic = 'force-dynamic'
 
@@ -15,12 +18,14 @@ export default async function ProyectosPage() {
     depth: 2,
   })
 
-  const highlightedProjects = projects.filter((project) => project.featured)
+  const { image } = await payload.findGlobal({ slug: 'projects-header' })
 
   return (
     <div>
-      <GallerySlider projects={highlightedProjects} />
+      <ProjectsHeader image={image as Media} />
       <ProjectsGallery projects={projects} />
+      <WhatsAppBanner />
+      <StatsBanner />
       <ContactSection />
     </div>
   )

@@ -93,9 +93,11 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     nosotros: Nosotros;
+    'projects-header': ProjectsHeader;
   };
   globalsSelect: {
     nosotros: NosotrosSelect<false> | NosotrosSelect<true>;
+    'projects-header': ProjectsHeaderSelect<false> | ProjectsHeaderSelect<true>;
   };
   locale: null;
   widgets: {
@@ -455,6 +457,16 @@ export interface Nosotros {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects-header".
+ */
+export interface ProjectsHeader {
+  id: string;
+  image: string | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "nosotros_select".
  */
 export interface NosotrosSelect<T extends boolean = true> {
@@ -464,6 +476,16 @@ export interface NosotrosSelect<T extends boolean = true> {
         image?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects-header_select".
+ */
+export interface ProjectsHeaderSelect<T extends boolean = true> {
+  image?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
