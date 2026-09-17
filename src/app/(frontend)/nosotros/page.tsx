@@ -4,6 +4,8 @@ import { WhatsAppBanner } from '@/components/home/WhatsAppBanner'
 import { StatsBanner } from '@/components/home/StatsBanner'
 import { ContactSection } from '@/components/ContactSection'
 import { ValoresGrid } from '@/components/nosotros/ValoresGrid'
+import { PageHeader } from '@/components/PageHeader'
+import type { Media } from '@/payload-types'
 
 export const dynamic = 'force-dynamic'
 
@@ -32,13 +34,25 @@ export default async function NosotrosPage() {
 
   return (
     <div>
-      <h1>NOSOTROS</h1>
-      <h2>Nuestros cimientos</h2>
-      {CIMIENTOS_PARAGRAPHS.map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
-      ))}
-      <h2>Nuestros valores</h2>
-      <ValoresGrid images={nosotros.valoresImages} />
+      <PageHeader
+        image={nosotros.image as Media}
+        title="NOSOTROS"
+        subtitle="Nuestra visión está con la de nuetsros clientes, buscamos alternativas ara construir juntos el proyecto del que somos parte."
+      />
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <h2 className="text-3xl font-bold uppercase">Nuestros cimientos</h2>
+        <div className="columns-1 gap-10 text-neutral-700 sm:columns-2">
+          {CIMIENTOS_PARAGRAPHS.map((paragraph, index) => (
+            <p key={index} className="mb-6 break-inside-avoid leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </section>
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <h2 className="text-3xl font-bold uppercase">Nuestros valores</h2>
+        <ValoresGrid images={nosotros.valoresImages} />
+      </section>
       <WhatsAppBanner />
       <StatsBanner />
       <ContactSection />

@@ -3,18 +3,13 @@ import type { Nosotros } from '@/payload-types'
 
 export function ValoresGrid({ images }: { images: Nosotros['valoresImages'] }) {
   return (
-    <div className="grid grid-cols-3">
+    <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
       {images?.map((item, index) => {
         const media = item.image
         if (typeof media !== 'object' || !media || !media.url) return null
         return (
-          <div key={item.id ?? index}>
-            <Image
-              src={media.url}
-              alt={media.alt}
-              width={media.width ?? 800}
-              height={media.height ?? 600}
-            />
+          <div key={item.id ?? index} className="relative aspect-square overflow-hidden rounded-xl">
+            <Image src={media.url} alt={media.alt} fill className="object-cover" />
           </div>
         )
       })}

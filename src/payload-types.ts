@@ -445,6 +445,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface Nosotros {
   id: string;
+  image: string | Media;
   /**
    * Imágenes para la sección "Nuestros valores".
    */
@@ -482,6 +483,7 @@ export interface ServicesHeader {
  * via the `definition` "nosotros_select".
  */
 export interface NosotrosSelect<T extends boolean = true> {
+  image?: T;
   valoresImages?:
     | T
     | {

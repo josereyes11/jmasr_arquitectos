@@ -10,6 +10,12 @@ export const Nosotros: GlobalConfig = {
   },
   fields: [
     {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },
+    {
       name: 'valoresImages',
       type: 'array',
       minRows: 6,
