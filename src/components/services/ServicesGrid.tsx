@@ -3,7 +3,7 @@ import { ServiceCard } from './ServiceCard'
 
 export function ServicesGrid({ services }: { services: Service[] }) {
   return (
-    <div className="columns-3">
+    <div className="columns-1 gap-6 px-6 py-16 sm:columns-2 lg:columns-3 lg:px-12 mx-auto max-w-7xl">
       {services.map((service) => (
         <div key={service.id} className="break-inside-avoid">
           <ServiceCard service={service} />

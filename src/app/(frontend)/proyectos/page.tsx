@@ -1,6 +1,6 @@
 import { getPayload } from 'payload'
 import config from '@/payload.config'
-import { ProjectsHeader } from '@/components/projects/ProjectsHeader'
+import { PageHeader } from '@/components/PageHeader'
 import { ProjectsGallery } from '@/components/ProjectsGallery'
 import { ContactSection } from '@/components/ContactSection'
 import { WhatsAppBanner } from '@/components/home/WhatsAppBanner'
@@ -22,7 +22,12 @@ export default async function ProyectosPage() {
 
   return (
     <div>
-      <ProjectsHeader image={image as Media} />
+      <PageHeader
+        image={image}
+        title="PROYECTOS"
+        subtitle="     Aquí podrás ver algunas de las obras ue forman parte de nuestro portafolio, proyectos
+          residenciales, oficinasy naves industriales"
+      />
       <ProjectsGallery projects={projects} />
       <WhatsAppBanner />
       <StatsBanner />

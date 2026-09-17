@@ -19,16 +19,24 @@ export function ServiceGalleryModal({
 
   return (
     <>
-      <button type="button" onClick={() => dialogRef.current?.showModal()}>
+      <button
+        type="button"
+        onClick={() => dialogRef.current?.showModal()}
+        className="mt-4 text-sm font-semibold text-greenforest underline"
+      >
         Ver fotos
       </button>
       {/* note: first modal in the project. Uses native <dialog> (showModal/close) no library, browser handles ESC/focus. */}
-      <dialog ref={dialogRef}>
-        <button type="button" onClick={() => dialogRef.current?.close()}>
+      <dialog ref={dialogRef} className="w-full max-w-3xl rounded-2xl p-6 backdrop:bg-black/60">
+        <button
+          type="button"
+          onClick={() => dialogRef.current?.close()}
+          className="ml-auto block text-sm font-semibold text-neutral-500"
+        >
           Cerrar
         </button>
-        <h3>{serviceName}</h3>
-        <ul>
+        <h3 className="mt-2 text-xl font-bold uppercase">{serviceName}</h3>
+        <ul className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {images.map((item, index) => {
             const media = item.image
             if (typeof media !== 'object' || !media || !media.url) return null
@@ -39,6 +47,7 @@ export function ServiceGalleryModal({
                   alt={media.alt}
                   width={media.width ?? 800}
                   height={media.height ?? 600}
+                  className="h-40 w-full rounded-lg object-cover"
                 />
               </li>
             )

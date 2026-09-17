@@ -94,10 +94,12 @@ export interface Config {
   globals: {
     nosotros: Nosotros;
     'projects-header': ProjectsHeader;
+    'services-header': ServicesHeader;
   };
   globalsSelect: {
     nosotros: NosotrosSelect<false> | NosotrosSelect<true>;
     'projects-header': ProjectsHeaderSelect<false> | ProjectsHeaderSelect<true>;
+    'services-header': ServicesHeaderSelect<false> | ServicesHeaderSelect<true>;
   };
   locale: null;
   widgets: {
@@ -467,6 +469,16 @@ export interface ProjectsHeader {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services-header".
+ */
+export interface ServicesHeader {
+  id: string;
+  image: string | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "nosotros_select".
  */
 export interface NosotrosSelect<T extends boolean = true> {
@@ -485,6 +497,16 @@ export interface NosotrosSelect<T extends boolean = true> {
  * via the `definition` "projects-header_select".
  */
 export interface ProjectsHeaderSelect<T extends boolean = true> {
+  image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services-header_select".
+ */
+export interface ServicesHeaderSelect<T extends boolean = true> {
   image?: T;
   updatedAt?: T;
   createdAt?: T;

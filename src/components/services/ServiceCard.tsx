@@ -9,10 +9,10 @@ export function ServiceCard({ service }: { service: Service }) {
   const hasGallery = gallery && gallery.length > 0
 
   return (
-    <article>
-      {hasIcon && <img src={icon.url!} alt={icon.alt} />}
-      <h3>{service.name}</h3>
-      <p>{service.description}</p>
+    <article className="mb-6 rounded-2xl border border-neutral-200 bg-white p-6">
+      {hasIcon && <img src={icon.url!} alt={icon.alt} className="h-12 w-12" />}
+      <h3 className="mt-2 text-lg font-bold uppercase">{service.name}</h3>
+      <p className="mt-2 text-sm text-neutral-600">{service.description}</p>
       {hasGallery && <ServiceGalleryModal serviceName={service.name} images={gallery} />}
     </article>
   )
