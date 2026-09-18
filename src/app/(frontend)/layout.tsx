@@ -13,7 +13,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en" className={museoSans.variable}>
+    <html lang="es" className={museoSans.variable}>
       <body className="flex min-h-screen flex-col">
         <Header />
         <main className="flex flex-1 flex-col">{children}</main>
