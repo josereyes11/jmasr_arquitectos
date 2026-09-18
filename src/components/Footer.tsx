@@ -1,36 +1,64 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 export default function Footer() {
   return (
-    <footer className="border-t border-neutral-200 bg-neutral-900 text-neutral-300">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <p className="max-w-3xl text-sm leading-relaxed">
-          <span className="font-semibold text-white">J+R | ARQUITECTOS</span> Somos un despacho de
-          arquitectura ubicado al norte de la Ciudad de México; nos gusta definir nuestro trabajo
-          como una arquitectura accesible, funcional y cotidiana, esto nos ha permitido
-          posicionarnos como la primer opción de todos nuestros clientes a lo largo de 20 años de
-          experiencia. <span className="font-semibold">Seguir leyendo…</span>
-        </p>
-        <p className="max-w-3xl text-sm leading-relaxed mt-3">
-          2159 2828 | 55 3959 5525 informes@jmasrarquitectos.com
-        </p>
-        <p className="max-w-3xl text-sm leading-relaxed mt-3">
-          Boulevard Central #71-D, Bosques del Valle, Coacalco, Estado de México 55717
-        </p>
-        <p className="max-w-3xl text-sm leading-relaxed">Escríbenos por WhatsApp: (55) 1291 3496</p>
-        <div className="mt-8 flex items-center gap-6 text-sm">
-          <span className="font-semibold text-white">Síguenos</span>
-          <a href="https://www.facebook.com/jmasrarquitectos/" target="_blank" rel="noreferrer">
-            Facebook
-          </a>
-          <a href="https://www.instagram.com/jmasrarquitectos/" target="_blank" rel="noreferrer">
-            Instagram
-          </a>
-          <a
-            href="https://www.linkedin.com/company/j-r-arquitectos/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
+    <footer className="border-t border-neutral-200 bg-neutral-900 text-neutral-300 p-24 md:p-24">
+      <div className="grid grid-cols-[auto_1fr] items-start gap-4">
+        <Image
+          src="/images/jmasr_arquitectos_logo_footer.png"
+          alt="J+R Arquitectos logo"
+          width={180}
+          height={180}
+        />
+        <div className="max-w-xl">
+          <p className="text-sm leading-relaxed">
+            <span className="font-semibold text-white">J+R | ARQUITECTOS</span> Somos un despacho de
+            arquitectura ubicado al norte de la Ciudad de México; nos gusta definir nuestro trabajo
+            como una arquitectura accesible, funcional y cotidiana, esto nos ha permitido
+            posicionarnos como la primer opción de todos nuestros clientes a lo largo de 20 años de
+            experiencia.{' '}
+            <Link href="/nosotros" className="font-semibold">
+              Seguir leyendo…
+            </Link>
+          </p>
+          <p className="max-w-3xl text-sm leading-relaxed mt-3">
+            <a href="tel:+525521592828" className="hover:text-white">
+              2159 2828
+            </a>
+            {' | '}
+            <a href="tel:+525539595525" className="hover:text-white">
+              55 3959 5525{' '}
+            </a>
+            <a href="mailto:informes@jmasrarquitectos.com" className="hover:text-white">
+              informes@jmasrarquitectos.com
+            </a>
+          </p>
+          <p className="max-w-3xl text-sm leading-relaxed mt-3">
+            Boulevard Central #71-D, Bosques del Valle, Coacalco, Estado de México 55717
+          </p>
+          <p className="max-w-3xl text-sm leading-relaxed">
+            Escríbenos por WhatsApp:{' '}
+            <a href="tel:5512913496" className="hover:text-white">
+              55 1291 3496
+            </a>
+          </p>
+          <div className="mt-8 flex items-center gap-6 text-sm">
+            <span className="font-semibold text-white">Síguenos</span>
+            <a href="https://www.facebook.com/jmasrarquitectos/" target="_blank" rel="noreferrer">
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/jmasrarquitectos/" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+            <a
+              href="https://www.linkedin.com/company/j-r-arquitectos/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
       </div>
     </footer>

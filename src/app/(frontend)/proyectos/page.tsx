@@ -1,7 +1,11 @@
-import Link from 'next/link'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
-import Image from 'next/image'
+import { PageHeader } from '@/components/PageHeader'
+import { ProjectsGallery } from '@/components/ProjectsGallery'
+import { ContactSection } from '@/components/ContactSection'
+import { WhatsAppBanner } from '@/components/home/WhatsAppBanner'
+import { StatsBanner } from '@/components/home/StatsBanner'
+import type { Media } from '@/payload-types'
 
 export const dynamic = 'force-dynamic'
 
@@ -14,42 +18,20 @@ export default async function ProyectosPage() {
     depth: 2,
   })
 
-  return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
-      <h1 className="text-3xl font-semibold">Proyectos</h1>
-      {projects.length === 0 ? (
-        <p className="mt-4 text-neutral-600">No hay projectos aún.</p>
-      ) : (
-        <ul className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <li key={project.id}>
-              <Link href={`/proyectos/${project.slug}`}>
-                {project.images && project.images.length > 0 && (
-                  <div>
-                    {project.images.map((item, i) => {
-                      const media = item.image
-                      if (typeof media !== 'object' || !media.url) return null
-                      return (
-                        <Image
-                          key={i}
-                          src={media.url}
-                          alt={media.alt}
-                          width={media.width ?? 200}
-                          height={media.height ?? 160}
-                          className="w-full rounded"
-                        />
-                      )
-                    })}
-                  </div>
-                )}
+  const { image } = await payload.findGlobal({ slug: 'projects-header' })
 
-                <h2 className="text-lg font-medium">{project.title}</h2>
-                {project.location && <p className="text-sm text-neutral-500">{project.location}</p>}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+  return (
+    <div>
+      <PageHeader
+        image={image as Media}
+        title="PROYECTOS"
+        subtitle="     Aquí podrás ver algunas de las obras ue forman parte de nuestro portafolio, proyectos
+          residenciales, oficinasy naves industriales"
+      />
+      <ProjectsGallery projects={projects} />
+      <WhatsAppBanner />
+      <StatsBanner />
+      <ContactSection />
     </div>
   )
 }

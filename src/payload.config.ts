@@ -7,8 +7,12 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
-
 import { Projects } from './collections/Projects'
+import { Services } from './collections/Services'
+import { Nosotros } from './globals/Nosotros'
+import { ProjectsHeader } from './globals/ProjectsHeader'
+import { ServicesHeader } from './globals/ServicesHeader'
+import { ContactBackground } from './globals/ContactBackground'
 
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 
@@ -22,7 +26,8 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Projects],
+  collections: [Users, Media, Projects, Services],
+  globals: [Nosotros, ProjectsHeader, ServicesHeader, ContactBackground],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -38,6 +43,7 @@ export default buildConfig({
         media: true,
       },
       token: process.env.BLOB_READ_WRITE_TOKEN,
+      clientUploads: true,
     }),
   ],
 })
