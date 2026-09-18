@@ -28,8 +28,8 @@ export default async function ProyectosDetallePage({
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
-      <div className="grid grid-cols-2 gap-x-8 gap-y-8">
-        <div className="col-start-1 row-start-1">
+      <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
+        <div className="col-start-1 row-start-1 sm:col-start-1">
           <h1 className="text-3xl max-w-2xl font-semibold">{project.title}</h1>
 
           {project.location && <p className="mt-2 text-neutral-500">{project.location}</p>}
@@ -42,7 +42,7 @@ export default async function ProyectosDetallePage({
         </div>
 
         {project.images && project.images.length > 0 && (
-          <div className="col-start-2 row-start-2 flex flex-col gap-2">
+          <div className="col-start-1 row-start-2 flex flex-col gap-2 sm:col-start-2">
             {project.images.map((item, i) => {
               const media = item.image
               if (typeof media !== 'object' || !media.url) return null
