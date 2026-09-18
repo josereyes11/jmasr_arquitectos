@@ -12,6 +12,7 @@ import { Services } from './collections/Services'
 import { Nosotros } from './globals/Nosotros'
 import { ProjectsHeader } from './globals/ProjectsHeader'
 import { ServicesHeader } from './globals/ServicesHeader'
+import { ContactBackground } from './globals/ContactBackground'
 
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 
@@ -26,7 +27,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Projects, Services],
-  globals: [Nosotros, ProjectsHeader, ServicesHeader],
+  globals: [Nosotros, ProjectsHeader, ServicesHeader, ContactBackground],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

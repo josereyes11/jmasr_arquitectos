@@ -95,11 +95,13 @@ export interface Config {
     nosotros: Nosotros;
     'projects-header': ProjectsHeader;
     'services-header': ServicesHeader;
+    'contact-background': ContactBackground;
   };
   globalsSelect: {
     nosotros: NosotrosSelect<false> | NosotrosSelect<true>;
     'projects-header': ProjectsHeaderSelect<false> | ProjectsHeaderSelect<true>;
     'services-header': ServicesHeaderSelect<false> | ServicesHeaderSelect<true>;
+    'contact-background': ContactBackgroundSelect<false> | ContactBackgroundSelect<true>;
   };
   locale: null;
   widgets: {
@@ -480,6 +482,16 @@ export interface ServicesHeader {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-background".
+ */
+export interface ContactBackground {
+  id: string;
+  image: string | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "nosotros_select".
  */
 export interface NosotrosSelect<T extends boolean = true> {
@@ -509,6 +521,16 @@ export interface ProjectsHeaderSelect<T extends boolean = true> {
  * via the `definition` "services-header_select".
  */
 export interface ServicesHeaderSelect<T extends boolean = true> {
+  image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-background_select".
+ */
+export interface ContactBackgroundSelect<T extends boolean = true> {
   image?: T;
   updatedAt?: T;
   createdAt?: T;
