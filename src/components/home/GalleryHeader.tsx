@@ -21,9 +21,9 @@ export function GalleryHeader({ projects }: { projects: Project[] }) {
   return (
     <section className="relative flex h-[80vh] min-h-[420px] w-full items-end overflow-hidden">
       {typeof media === 'object' && media?.url && (
-        <Image src={media.url} alt={media.alt} fill priority className="object-cover" />
+        <Image src={media.url} alt={media.alt} fill priority className="object-cover grayscale" />
       )}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-greenforest/90 via-greenforest/50 to-green/30" />
+      <div className="pointer-events-none absolute inset-0 mix-blend-multiply bg-gradient-to-t from-greenforest/90 via-greenforest/50 to-green/30" />
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pb-16 text-white">
         <h1 className="text-4xl font-black uppercase tracking-wide sm:text-6xl">
