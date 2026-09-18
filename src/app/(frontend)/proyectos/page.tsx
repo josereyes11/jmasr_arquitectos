@@ -23,7 +23,7 @@ export default async function ProyectosPage() {
   return (
     <div>
       <PageHeader
-        image={image}
+        image={image as Media}
         title="PROYECTOS"
         subtitle="     Aquí podrás ver algunas de las obras ue forman parte de nuestro portafolio, proyectos
           residenciales, oficinasy naves industriales"
