@@ -5,13 +5,16 @@ export function ServicesSection({ services }: { services: Service[] }) {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
       <h2 className="text-3xl font-black uppercase">SERVICIOS</h2>
-      <ul className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="columns-1 gap-8 sm:columns-2 lg:columns-3">
         {services.map((service) => {
           const icon = service.icon
           const hasIcon = typeof icon === 'object' && icon !== null && icon.url
 
           return (
-            <li key={service.id} className="rounded-2xl border border-neutral-200 bg-white p-6">
+            <li
+              key={service.id}
+              className="mb-8 break-inside-avoid rounded-2xl border border-neutral-200 bg-white p-6 "
+            >
               {hasIcon && <img src={icon.url!} alt={icon.alt} className="h-12 w-12" />}
               <h3 className="text-lg font-bold">{service.name}</h3>
               <p className="mt-1 text-sm text-neutral-600">{service.description}</p>

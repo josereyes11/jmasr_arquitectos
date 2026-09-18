@@ -7,7 +7,7 @@ export function Header() {
         <Link href="/">
           <span className="text-lg font-bold tracking-wide">J+R | ARQUITECTOS</span>
         </Link>
-        <ul className="flex gap-8 text-sm font-medium text-neutral-700">
+        <ul className="hidden sm:flex gap-8 text-sm font-medium text-neutral-700">
           <li>
             <Link href="/proyectos" className="hover:text-neutral-900">
               Proyectos
